@@ -54,7 +54,9 @@ function generateCalendar() {
         if (appointment) {
             const appointmentElement = document.createElement('div');
             appointmentElement.classList.add('appointment');
-            appointmentElement.textContent = appointment.title;
+            const appointmentText = document.createElement('span'); // Create a span for the appointment text
+            appointmentText.textContent = appointment.title;
+            appointmentElement.appendChild(appointmentText);
             dateCell.appendChild(appointmentElement);
         }
 
