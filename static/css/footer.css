@@ -1,0 +1,95 @@
+footer {
+    background-color: #eaeaea;
+    padding: 40px 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer-left img {
+    width: 60px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.footer-left p {
+    margin-top: 10px;
+}
+
+.footer-mid {
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
+    padding: 0 50px;
+}
+
+.footer-links-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 0;
+    display: block;
+    text-align: left;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.social-media div {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.footer-bottom button {
+    padding: 10px 20px;
+    background-color: #0e89e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.footer-awards {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-awards .award {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.footer-copy {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.social-media{
+    display: flex;
+}

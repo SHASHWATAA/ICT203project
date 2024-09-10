@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.calendar {
+    display: inline-block;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.month {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date {
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 50px;
+}
+
+.appointment {
+    background-color: #0e89e6;
+
+    color: white;
+    border-radius: 3px;
+    padding: 2px;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.today {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: red;
+}
+
