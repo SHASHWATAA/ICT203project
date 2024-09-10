@@ -36,12 +36,17 @@ footer {
     gap: 20px;
 }
 
+.footer-links {
+    min-width: 100px;
+}
+
 .footer-links a {
     text-decoration: none;
     color: #333;
     padding: 5px 0;
     display: block;
     text-align: left;
+
 }
 
 .footer-right {

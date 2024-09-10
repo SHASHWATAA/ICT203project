@@ -56,5 +56,8 @@ h1 {
     .appointment span{
         display: none;
     }
+    .calendar {
+        width: -webkit-fill-available;
+    }
 }
 

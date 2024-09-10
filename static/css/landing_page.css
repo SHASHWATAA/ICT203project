@@ -23,4 +23,8 @@ article {
     border: 1px solid #ccc;
     padding: 20px;
 }
-
+@media screen and (max-width: 768px) {
+    .content-grid {
+        gap: 0;
+    }
+}
