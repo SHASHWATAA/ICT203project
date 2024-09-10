@@ -52,3 +52,9 @@ h1 {
     color: red;
 }
 
+@media screen and (max-width: 768px) {
+    .appointment span{
+        display: none;
+    }
+}
+
