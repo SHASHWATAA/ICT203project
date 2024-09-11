@@ -80,9 +80,9 @@ body {
     overflow: hidden;
 }
 
-.image-slider img{
-    max-height: 80vh
-}
+/*.image-slider img{*/
+/*    max-height: 80vh*/
+/*}*/
 
 .slides {
     display: flex;
