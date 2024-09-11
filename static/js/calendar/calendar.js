@@ -9,7 +9,7 @@ const appointments = [
 
 // Get today's date in Australia/Sydney timezone
 function getSydneyDate() {
-    const sydneyTime = new Date()
+    const sydneyTime = new Date();
     const sydneyDate = new Date(sydneyTime);
 
     return {
@@ -28,6 +28,9 @@ function generateCalendar() {
     const daysInMonth = 30;  // September 2024 has 30 days
     const startDay = 0;  // September 1, 2024 is a Sunday
     const calendarDates = document.getElementById('calendar-dates');
+
+    // Clear existing calendar
+    calendarDates.innerHTML = '';
 
     // Add empty cells for days before the first day of the month
     for (let i = 0; i < startDay; i++) {
@@ -64,5 +67,63 @@ function generateCalendar() {
     }
 }
 
-// Initialize the calendar
+// Function to render the task list with remove buttons
+function renderTaskList() {
+    const taskList = document.getElementById('task-list');
+    taskList.innerHTML = ''; // Clear the current list
+
+    appointments.forEach((appointment, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${appointment.date}: ${appointment.title}`;
+
+        // Create the remove button
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => removeTask(index));
+
+        listItem.appendChild(removeButton);
+        taskList.appendChild(listItem);
+    });
+}
+
+// Function to add a new task
+function addNewTask() {
+    const newTaskDate = document.getElementById('newTaskDate').value;
+    const newTaskTitle = document.getElementById('newTaskTitle').value;
+
+    if (newTaskDate && newTaskTitle) {
+        // Add new appointment to the appointments array
+        appointments.push({ date: newTaskDate, title: newTaskTitle });
+
+        // Regenerate the calendar and task list to reflect the new task
+        generateCalendar();
+        renderTaskList();
+
+        // Show notification
+        showNotification(`Task added: ${newTaskTitle}`);
+    } else {
+        alert('Please enter both a date and a task title.');
+    }
+}
+
+// Function to remove a task by index
+function removeTask(index) {
+    const removedTask = appointments[index];  // Get the task being removed
+
+    // Remove the task from the appointments array
+    appointments.splice(index, 1);
+
+    // Regenerate the calendar and task list to reflect the change
+    generateCalendar();
+    renderTaskList();
+
+    // Show notification
+    showNotification(`Task removed: ${removedTask.title}`);
+}
+
+// Initialize the calendar and task list
 generateCalendar();
+renderTaskList();
+
+// Add event listener to the "Add Task" button
+document.getElementById('addTaskButton').addEventListener('click', addNewTask);
