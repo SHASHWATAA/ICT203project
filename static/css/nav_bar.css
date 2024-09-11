@@ -40,6 +40,12 @@
     padding: 10px;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+
 
 button {
     padding: 10px 20px;
@@ -50,6 +56,16 @@ button {
     border-radius: 5px;
 }
 
+.company-name{
+    font-size: 1.5em;
+    color: black;
+}
+
+.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
 @media screen and (max-width: 768px) {
     .logo-container, .nav-bar-container {
         background-color: transparent;
