@@ -69,6 +69,13 @@ button:hover {
     margin: 20px auto;
 }
 
+main {
+    background-image: url(../images/signup_from/background_image.jpg);
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+    padding-bottom: 150px;
+}
+
 .logo {
     color: #333;
 }
@@ -103,4 +110,14 @@ button:hover {
 label {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        margin-top:50px;
+        margin-bottom:0px;
+    }
+    main {
+        padding-bottom: 50px;
+    }
 }
