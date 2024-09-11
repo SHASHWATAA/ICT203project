@@ -34,26 +34,110 @@ body {
 }
 .products {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 40px 0;
 }
 .product-card {
-    width: 30%;
+    width: 25%;
     text-align: center;
     background-color: #eaeaea;
     padding: 20px;
 }
 .reviews {
-    display: flex;
     justify-content: space-around;
     margin: 40px 0;
+}
+
+.review-container{
+    display: flex;
+    justify-content: space-between;
 }
 .review {
     width: 30%;
     text-align: center;
+}
+
+.top-section {
+    background-image: url('../images/index/cover_image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Adjust height as needed */
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    text-align: center;
+}
+
+.image-slider {
+    position: relative;
+    max-height: 100vh; /* Set your desired width */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #717171;
+}
+
+.products img{
+    width: -webkit-fill-available;
 }
 @media screen and (max-width: 768px) {
     .top-section {
         padding: 0 0 30px 0;
     }
 }
+
+
