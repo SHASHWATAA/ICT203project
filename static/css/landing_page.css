@@ -6,7 +6,6 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
 }
 
 main {
@@ -23,8 +22,18 @@ article {
     border: 1px solid #ccc;
     padding: 20px;
 }
+
+main {
+    width: 80%;
+    margin: auto;
+}
 @media screen and (max-width: 768px) {
     .content-grid {
         gap: 0;
+    }
+
+    main {
+        width: unset;
+        margin: unset;
     }
 }

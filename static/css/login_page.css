@@ -65,3 +65,10 @@ body {
     text-decoration: underline;
 }
 
+main {
+    background-image: url(../images/signup_from/background_image.jpg);
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+    padding-bottom: 10px;
+}
+
