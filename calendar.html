@@ -10,7 +10,7 @@
 <body>
 <div id="navbar"></div>
 <h1>Event Calendar</h1>
-<div>
+<div class="add-task-container">
   <input type="date" id="newTaskDate">
   <input type="text" id="newTaskTitle" placeholder="Task Title">
   <button id="addTaskButton">Add Task</button>
@@ -21,13 +21,13 @@
     <h2>September 2024</h2>
   </div>
   <div class="days">
-    <div>Sun</div>
     <div>Mon</div>
     <div>Tue</div>
     <div>Wed</div>
     <div>Thu</div>
     <div>Fri</div>
     <div>Sat</div>
+    <div>Sun</div>
   </div>
   <div class="dates" id="calendar-dates"></div>
   <h3>Task List</h3>
@@ -35,7 +35,6 @@
     <ul id="task-list"></ul>
   </div>
 </div>
-<button id="notifyButton" data-message="New Event Added!" onclick="showNotification(this.getAttribute('data-message'))">Add event</button>
 
 <div id="footer"></div>
 <script src="static/js/import_footer.js"></script>

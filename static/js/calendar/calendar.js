@@ -21,16 +21,36 @@ function getSydneyDate() {
 
 const todaySydney = getSydneyDate();
 
-// Generate calendar dates
-function generateCalendar() {
-    const year = 2024;  // You can dynamically fetch the current year for a full calendar system
-    const month = 9;    // September 2024, change it dynamically based on the need
-    const daysInMonth = 30;  // September 2024 has 30 days
-    const startDay = 0;  // September 1, 2024 is a Sunday
-    const calendarDates = document.getElementById('calendar-dates');
+// Function to highlight the task in the task list by checking both title and date
+function highlightTask(taskTitle, taskDate) {
+    const taskListItems = document.querySelectorAll('#task-list li');
+    taskListItems.forEach(item => {
+        // Check if the task title and date in the list match the hovered task
+        if (item.textContent.includes(taskTitle) && item.textContent.includes(taskDate)) {
+            item.classList.add('highlight');
+        } else {
+            item.classList.remove('highlight');
+        }
+    });
+}
 
-    // Clear existing calendar
-    calendarDates.innerHTML = '';
+// Remove the highlight when hover ends
+function removeHighlight() {
+    const taskListItems = document.querySelectorAll('#task-list li');
+    taskListItems.forEach(item => {
+        item.classList.remove('highlight');
+    });
+}
+
+// Update your generateCalendar function to add hover event listeners
+function generateCalendar() {
+    const year = 2024;
+    const month = 9;  // September 2024
+    const daysInMonth = 30;
+    const startDay = 0;  // Starts on a Sunday
+
+    const calendarDates = document.getElementById('calendar-dates');
+    calendarDates.innerHTML = ''; // Clear the previous content if regenerating the calendar
 
     // Add empty cells for days before the first day of the month
     for (let i = 0; i < startDay; i++) {
@@ -45,27 +65,26 @@ function generateCalendar() {
         dateCell.classList.add('date');
         dateCell.innerHTML = `<span>${day}</span>`;
 
-        // Check if today (based on Sydney timezone) dynamically
-        const isToday = (todaySydney.year === year && todaySydney.month === month && todaySydney.day === day);
-        if (isToday) {
-            dateCell.classList.add('today');
-        }
-
         // Check if there's an appointment on this date
         const currentDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         const appointment = appointments.find(app => app.date === currentDate);
         if (appointment) {
             const appointmentElement = document.createElement('div');
             appointmentElement.classList.add('appointment');
-            const appointmentText = document.createElement('span'); // Create a span for the appointment text
+            const appointmentText = document.createElement('span');
             appointmentText.textContent = appointment.title;
             appointmentElement.appendChild(appointmentText);
             dateCell.appendChild(appointmentElement);
+
+            // Add hover event to the appointment (pass both title and date)
+            appointmentElement.addEventListener('mouseover', () => highlightTask(appointment.title, currentDate));
+            appointmentElement.addEventListener('mouseout', removeHighlight);
         }
 
         calendarDates.appendChild(dateCell);
     }
 }
+
 
 // Function to render the task list with remove buttons
 function renderTaskList() {

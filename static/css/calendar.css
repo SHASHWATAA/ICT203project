@@ -52,6 +52,116 @@ h1 {
     color: red;
 }
 
+
+/* Task List Container */
+#task-list-container {
+    width: fit-content;
+    margin: auto;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Each Task Item */
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+
+
+/* Remove Button */
+#task-list li button {
+    background-color: #e60e0e;
+    padding: 1px;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+#task-list li button:hover {
+    background-color: #6c0000;
+}
+
+#addTaskButton{
+    background-color: #80b644;
+    padding: 1px;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.add-task-container button:hover {
+    background-color: #3a551f;
+}
+
+/* Input section styling */
+#task-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Add some space below the input */
+}
+
+/* Date input styling */
+#newTaskDate {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between inputs */
+    width: 150px;
+}
+
+/* Task title input styling */
+#newTaskTitle {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between input and button */
+    width: 200px;
+}
+
+/* Add Task button styling */
+#addTaskButton {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addTaskButton:hover {
+    background-color: #4cae4c;
+}
+
+/* General alignment for form */
+#task-input-container input, #task-input-container button {
+    outline: none;
+}
+
+.highlight {
+    background-color: #d3d37d;
+    transition: background-color 0.5s ease;
+}
+
+
 @media screen and (max-width: 768px) {
     .appointment span{
         display: none;
@@ -59,5 +169,21 @@ h1 {
     .calendar {
         width: -webkit-fill-available;
     }
+    .add-task-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .add-task-container input, .add-task-container button {
+        width: 50%;
+        margin: 10px;
+    }
+
+    button#addTaskButton {
+        padding: 12px;
+        font-size: 18px;
+    }
 }
+
 
