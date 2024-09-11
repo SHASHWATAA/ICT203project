@@ -19,6 +19,8 @@ body {
 .top-section .content {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    top: 20%;
 }
 .top-section button {
     padding: 10px 20px;
@@ -73,9 +75,13 @@ body {
 
 .image-slider {
     position: relative;
-    max-height: 100vh; /* Set your desired width */
+    /*max-height: 100vh; !* Set your desired width *!*/
     margin: auto;
     overflow: hidden;
+}
+
+.image-slider img{
+    max-height: 80vh
 }
 
 .slides {
@@ -96,9 +102,9 @@ main {
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    top: 100%;
+    transform: translateY(-111%);
+    background-color: #0e89e6;
     border: none;
     font-size: 18px;
     padding: 10px;
@@ -115,6 +121,7 @@ main {
 .dots {
     text-align: center;
     margin-top: 10px;
+    padding-top: 25px;
 }
 
 .dot {
@@ -130,6 +137,8 @@ main {
 .active {
     background-color: #717171;
 }
+
+
 
 .products img{
     width: -webkit-fill-available;
