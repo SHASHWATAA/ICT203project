@@ -1,7 +1,8 @@
-// document.getElementById('notifyButton').addEventListener('click', function() {
-//     const message = this.getAttribute('data-message'); // Retrieve the message from data attribute
-//     showNotification(message);
-// });
+// Event listener for the notify button
+document.getElementById('notifyButton').addEventListener('click', function() {
+    const message = this.getAttribute('data-message'); // Retrieve the message from data attribute
+    showNotification(message);
+});
 
 function showNotification(message) {
     const notificationContainer = document.getElementById('notificationContainer');
@@ -34,9 +35,7 @@ function showNotification(message) {
 
     // Handle manual close by clicking "X"
     closeButton.onclick = () => {
-        if (notificationContainer.contains(notification)) {
-            notificationContainer.removeChild(notification);
-        }
+        closeNotification(notification);
         clearTimeout(timeoutId); // Clear the timeout to prevent double removal
     };
 
@@ -44,4 +43,23 @@ function showNotification(message) {
     setTimeout(() => {
         timerBar.style.width = '100%';
     }, 0);
+
+    // Handle closing notification on Esc key press
+    const handleEscKey = (event) => {
+        if (event.key === 'Escape') {
+            closeNotification(notification);
+            clearTimeout(timeoutId); // Clear the timeout to prevent double removal
+            document.removeEventListener('keydown', handleEscKey); // Remove the event listener
+        }
+    };
+
+    document.addEventListener('keydown', handleEscKey); // Add event listener
+}
+
+// Function to close notification
+function closeNotification(notification) {
+    const notificationContainer = document.getElementById('notificationContainer');
+    if (notificationContainer.contains(notification)) {
+        notificationContainer.removeChild(notification);
+    }
 }

@@ -147,6 +147,14 @@ main {
     .top-section {
         padding: 0 0 30px 0;
     }
+
+    .review-container {
+        display: block;
+    }
+
+    .review {
+        width: 100%;
+    }
 }
 
 

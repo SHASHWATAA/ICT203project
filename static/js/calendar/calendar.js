@@ -47,7 +47,7 @@ function generateCalendar() {
     const year = 2024;
     const month = 9;  // September 2024
     const daysInMonth = 30;
-    const startDay = 0;  // Starts on a Sunday
+    const startDay = 0;
 
     const calendarDates = document.getElementById('calendar-dates');
     calendarDates.innerHTML = ''; // Clear the previous content if regenerating the calendar
@@ -63,6 +63,9 @@ function generateCalendar() {
     for (let day = 1; day <= daysInMonth; day++) {
         const dateCell = document.createElement('div');
         dateCell.classList.add('date');
+        if (day === todaySydney.day){
+            dateCell.classList.add('today');
+        }
         dateCell.innerHTML = `<span>${day}</span>`;
 
         // Check if there's an appointment on this date
