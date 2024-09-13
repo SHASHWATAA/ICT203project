@@ -105,4 +105,8 @@ select:hover {
         gap: 5px;
         padding: 0 20px;
     }
+
+    select {
+        margin-right: 0;
+    }
 }

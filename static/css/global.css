@@ -1,3 +1,25 @@
 body{
     min-width: 400px;
 }
+
+/* Hide mobile select on desktop */
+.mobile {
+    display: none; /* Hidden by default */
+}
+
+/* Show mobile select on mobile */
+@media (max-width: 768px) {
+    .desktop {
+        display: none; /* Hide desktop version on mobile */
+    }
+   .mobile {
+        display: inline; /* Show mobile version */
+    }
+}
+
+/* Show desktop select on larger screens */
+@media (min-width: 769px) {
+    .desktop {
+        display: inline; /* Show desktop version */
+    }
+}

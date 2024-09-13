@@ -15,7 +15,7 @@ function showNotification(message) {
     // Create close button
     const closeButton = document.createElement('span');
     closeButton.className = 'close-btn';
-    closeButton.innerHTML = '×'; // Close symbol
+    closeButton.innerHTML = 'X'; // Close symbol
 
     // Create timer bar
     const timerBar = document.createElement('div');
