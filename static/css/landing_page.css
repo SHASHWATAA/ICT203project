@@ -36,4 +36,12 @@ main {
         width: unset;
         margin: unset;
     }
+    .content-grid {
+        display: block;
+    }
+    article {
+        padding: 20px;
+        width: 80%;
+        margin: auto;
+    }
 }
