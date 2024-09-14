@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>नियुक्तिहरूसहितको क्यालेन्डर</title>
+  <link rel="stylesheet" href="static/css/calendar.css">
+  <link rel="stylesheet" href="static/css/global.css">
+</head>
+<body>
+<div id="navbar"></div>
+<h1>घटना क्यालेन्डर</h1>
+<div class="add-task-container">
+  मिति: <input type="date" id="newTaskDate">
+  <input type="text" id="newTaskTitle" placeholder="कार्यको शीर्षक">
+  <button id="addTaskButton">कार्य थप्नुहोस्</button>
+</div>
+
+<div class="calendar">
+  <div class="month">
+    <h2>सेप्टेम्बर २०२४</h2>
+  </div>
+  <div class="days">
+    <div>सोम</div>
+    <div>मंगल</div>
+    <div>बुध</div>
+    <div>बिहीबार</div>
+    <div>शुक्र</div>
+    <div>शनिबार</div>
+    <div>आइतबार</div>
+  </div>
+  <div class="dates" id="calendar-dates"></div>
+  <h3>कार्य सूची</h3>
+  <div id="task-list-container">
+    <ul id="task-list"></ul>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="static/js/import_footer.js"></script>
+<script src="static/js/import_navbar.js"></script>
+
+<script src="static/js/calendar/calendar.js"></script>
+</body>
+</html>

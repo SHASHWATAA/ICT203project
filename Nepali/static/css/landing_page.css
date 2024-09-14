@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+article {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .content-grid {
+        gap: 0;
+    }
+
+    main {
+        width: unset;
+        margin: unset;
+    }
+    .content-grid {
+        display: block;
+    }
+    article {
+        padding: 20px;
+        width: 80%;
+        margin: auto;
+    }
+}

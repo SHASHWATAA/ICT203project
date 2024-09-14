@@ -1,9 +1,3 @@
-// Event listener for the notify button
-document.getElementById('notifyButton').addEventListener('click', function() {
-    const message = this.getAttribute('data-message'); // Retrieve the message from data attribute
-    showNotification(message);
-});
-
 function showNotification(message) {
     const notificationContainer = document.getElementById('notificationContainer');
 

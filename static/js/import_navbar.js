@@ -16,3 +16,4 @@ function loadScript(src) {
 
 // Load the notification.js script
 loadScript('static/js/notification.js');
+loadScript('static/js/language_switcher.js');

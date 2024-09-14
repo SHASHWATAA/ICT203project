@@ -18,13 +18,13 @@
     </div>
     <div class="login">
       <!-- Language select for mobile -->
-      <select class="language-select mobile">
-        <option value="en">🇬🇧</option>
+      <select class="language-select mobile" onchange="changeLanguage(this)">
         <option value="ne">🇳🇵</option>
+        <option value="en">🇬🇧</option>
       </select>
 
-      <!-- Language select for desktop -->
-      <select class="language-select desktop">
+      <!-- डेस्कटपका लागि भाषा चयन -->
+      <select class="language-select desktop" onchange="changeLanguage(this)">
         <option value="en">🇬🇧 English</option>
         <option value="ne">🇳🇵 Nepali</option>
       </select>
