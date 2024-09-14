@@ -1,16 +1,28 @@
 function changeLanguage(selectElement) {
     const selectedValue = selectElement.value;
     const currentUrl = window.location.href;
-
     let newUrl;
 
-    if (selectedValue === 'ne') {
-        // Redirect to Nepali version by adding '/Nepali/' before the last part of the URL
-        newUrl = currentUrl.replace(/(\/ICT203_Group_Project\/)([^\/]+)$/, '$1Nepali/$2');
+    if (currentUrl.includes('ICT203_Group_Project')) {
+        // Local environment handling with 'ICT203_Group_Project' in the URL
+        if (selectedValue === 'ne') {
+            // Add '/Nepali/' in the local environment
+            newUrl = currentUrl.replace(/(ICT203_Group_Project\/)([^\/]+\.html)$/, '$1Nepali/$2');
+        } else {
+            // Remove '/Nepali/' in the local environment
+            newUrl = currentUrl.replace(/\/Nepali\//, '/');
+        }
     } else {
-        // Redirect to English version by removing '/Nepali/'
-        newUrl = currentUrl.replace(/\/ICT203_Group_Project\/Nepali\//, '/ICT203_Group_Project/');
+        // Production environment handling
+        if (selectedValue === 'ne') {
+            // Add '/Nepali/' in production environment
+            newUrl = currentUrl.replace(/(shash\.win\/)([^\/]+\.html)$/, '$1Nepali/$2');
+        } else {
+            // Remove '/Nepali/' in production environment
+            newUrl = currentUrl.replace(/\/Nepali\//, '/');
+        }
     }
 
+    // Redirect to the new URL
     window.location.href = newUrl;
 }
